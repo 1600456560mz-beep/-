@@ -1,0 +1,34 @@
+{
+  "entities": {
+    "Mistake": {
+      "title": "Mistake Record",
+      "description": "Represents a student's mistake with generated variations for practice.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The user ID who owns this mistake." },
+        "originalImageUrl": { "type": "string", "description": "URL to the original photo of the mistake." },
+        "originalText": { "type": "string", "description": "OCR extracted text of the original question." },
+        "knowledgePoint": { "type": "string", "description": "The core knowledge point identified by AI." },
+        "variations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "question": { "type": "string" },
+              "answer": { "type": "string" },
+              "explanation": { "type": "string" }
+            }
+          }
+        },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "originalText", "knowledgePoint", "variations", "createdAt"]
+    }
+  },
+  "firestore": {
+    "mistakes": {
+      "schema": "Mistake",
+      "description": "Collection of all user mistakes and their variations."
+    }
+  }
+}

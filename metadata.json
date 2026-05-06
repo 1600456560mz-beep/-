@@ -1,0 +1,6 @@
+{
+  "name": "AI 错题打印机",
+  "description": "AI 驱动的错题收集器，支持拍照识别、举一反三生成及 PDF 打印。",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["AI OCR", "Question Generation", "PDF Printing"]
+}
